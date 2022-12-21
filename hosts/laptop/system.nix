@@ -114,7 +114,6 @@
     wayland-protocols
     xwayland
     wofi
-    firefox
     qt6.qtwayland
     glfw-wayland
     wdisplays
