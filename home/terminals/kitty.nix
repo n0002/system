@@ -1,4 +1,4 @@
-{pkgs, lib, ... }:
+{pkgs, ... }:
 
 {
   programs = {
@@ -23,7 +23,7 @@
         tab_bar_style = "powerline";
         tab_bar_align = "left";
        
-        confirm_os_window_close = 1;
+        confirm_os_window_close = 0;
         
    };
   };
