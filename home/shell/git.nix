@@ -14,7 +14,11 @@
     init = {defaultBranch = "main";};
     };
 
-
-      };
+    aliases = {
+      pu = "push";
+      ci = "commit";
+      st = "status";
      };
+   };
+ };
 }
