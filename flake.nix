@@ -17,37 +17,21 @@
 
 		};
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, hyprland }: 
+  outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, hyprland }: 
     let
-	  system = "x86_64-linux";
-	  pkgs = import nixpkgs {
-		 inherit system;
-		 config.allowUnfree = true;
-		 };
-		 lib = nixpkgs.lib;
-      in {
-		 nixosConfigurations = {
-		 laptop = lib.nixosSystem {
-				inherit system;
+      # Variables that can be used in the config files.
+      user = "n";
+    in
+    # Use above variables in ...
+    {
+      nixosConfigurations = (
+        # NixOS configurations
+        import ./hosts {
+          # Imports ./hosts/default.nix
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs nixos-hardware home-manager user hyprland ; # Also inherit home-manager so it does not need to be defined here.
+        }
+      );
+    };
 
-				modules = [ 
-				
-        ./hosts/laptop/system.nix
-        
-        nixos-hardware.nixosModules.framework-12th-gen-intel
-        
-        hyprland.nixosModules.default
-        { programs.hyprland.enable = true; }
-
-				home-manager.nixosModules.home-manager {
-				  home-manager.useGlobalPkgs = true;
-				  home-manager.useUserPackages = true;
-				  home-manager.users.n = {
-						imports = [ ./hosts/laptop/home.nix ];
-						  };
-						}
-				];
-		      };
-		   };
-  };
 }
