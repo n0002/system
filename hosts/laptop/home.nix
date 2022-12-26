@@ -6,7 +6,7 @@
      (import ../../home/terminals/default.nix) ++
      (import ../../home/browsers/default.nix) ++
      (import ../../home/scripts/default.nix) ++
-     (import ../../home/editors/neovim/neovim.nix) ++
+     (import ../../home/editors/default.nix) ++
      (import ../../home/desktop/default.nix) ++
      (import ../../home/shell);
 
