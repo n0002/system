@@ -15,9 +15,10 @@
       url = github:hyprwm/Hyprland;
       };
 
+    webcord.url = "github:fufexan/webcord-flake";
 		};
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, hyprland }: 
+  outputs = inputs @ { webcord, self, nixpkgs, home-manager, nixos-hardware, hyprland }: 
     let
       # Variables that can be used in the config files.
       user = "n";
@@ -29,7 +30,7 @@
         import ./hosts {
           # Imports ./hosts/default.nix
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixos-hardware home-manager user hyprland ; # Also inherit home-manager so it does not need to be defined here.
+          inherit inputs nixpkgs nixos-hardware home-manager user hyprland webcord ; # Also inherit home-manager so it does not need to be defined here.
         }
       );
     };

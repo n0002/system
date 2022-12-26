@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, nixos-hardware, lib, home-manager, hyprland, user}:
+{ inputs, nixpkgs, nixos-hardware, lib, home-manager, hyprland, webcord, user}:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -6,6 +6,9 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true; # Allow proprietary software
+    overlays = [
+      webcord.overlays.default
+    ];
   };
 
   lib = nixpkgs.lib;
@@ -28,7 +31,7 @@ in
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit user inputs; };
         home-manager.users.${user} = {
           imports = [ (import ./laptop/home.nix) ];
           };
