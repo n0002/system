@@ -1,9 +1,5 @@
 {config, pkgs, lib, ... }:
 
-# This waybar config is from https://github.com/Ruixi-rebirth
-# Thank you so much
-#TODO: build my own bar
-
 {
   programs.waybar = {
       enable = true;
@@ -13,7 +9,12 @@
                 font-size: 16pt;
                 font-weight: bold;
                 border-radius: 0px;
+                background-color: rgb(0, 0, 0); 
+                color: rgb(255, 255, 255);
               }
+            #workspaces {
+                background-color: rgb(0, 0, 0); 
+                }
       '';
       settings = [{
         "layer" = "top";
