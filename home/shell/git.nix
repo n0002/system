@@ -18,6 +18,10 @@
       pu = "push";
       ci = "commit";
       st = "status";
+      a  = "add";
+      l  = "log";
+      h  = "history";
+      
      };
    };
  };
