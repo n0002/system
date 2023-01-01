@@ -98,7 +98,6 @@
     wget
     psmisc
     exfat
-    widevine-cdm
     discord
     brave
     ffmpeg
@@ -123,7 +122,6 @@
 
 
   nixpkgs.overlays = [
-    (final: prev: { qutebrowser = prev.qutebrowser.override { enableWideVine = true; }; })
     (self: super: {
       waybar = super.waybar.overrideAttrs (oldAttrs: {
         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
