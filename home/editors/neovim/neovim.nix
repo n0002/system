@@ -24,15 +24,33 @@ plugins = with pkgs.vimPlugins; [
 
 # -- Completion -- #
    nvim-cmp
+   nvim-autopairs
    luasnip
    cmp_luasnip
    cmp-buffer
    cmp-path
    cmp-cmdline
+   cmp-treesitter
+   lspkind-nvim
+   nvim-lspconfig
    
 # -- Colors -- #
    catppuccin-nvim
    tokyonight-nvim
    ];
  };
+ 
+ home.packages = with pkgs; [
+    rnix-lsp
+    sumneko-lua-language-server
+
+    gopls
+    pyright
+    rust-analyzer
+    stylua
+    nixpkgs-fmt
+    rustfmt
+    lldb
+ ];
+
 }

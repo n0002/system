@@ -48,7 +48,7 @@
   services.xserver.displayManager.gdm.wayland.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   programs.sway.enable = true;
-
+  services.xserver.windowManager.qtile.enable = true;
 
   # Configure keymap in X11
   services.xserver = {

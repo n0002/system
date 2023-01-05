@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports =
@@ -52,6 +52,7 @@
  spotify
  anki-bin
  lxappearance
+ gotop
  ytfzf
 ];
 }

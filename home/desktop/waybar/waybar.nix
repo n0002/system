@@ -26,13 +26,18 @@
           "wlr/workspaces"
           "battery"
         ];
-        
+        modules-right = [
+          "memory"
+        ]; 
         "wlr/workspaces" = {
           "format" = "{icon}";
         };
         
         "battery" = {
           };
+        "memory" = {
+          };
+
       }];
     };
 }
