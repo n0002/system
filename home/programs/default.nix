@@ -4,4 +4,5 @@
  ./webcord.nix
  ./gallery.nix
  ./tmux.nix
+ ./rofi.nix
 ]
