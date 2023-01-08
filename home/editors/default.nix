@@ -1,4 +1,4 @@
 [
   ./neovim/neovim.nix
-  ./helix.nix
+  ./helix/helix.nix
 ]
