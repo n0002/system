@@ -7,7 +7,7 @@
   };
 
   home.file.".config/zellij/config.kdl".source = ./config.kdl;
-  home.file.".config/zellij/layouts/main.yaml".source = ./layouts/main.yaml;
+  home.file.".config/zellij/layouts/main.kdl".source = ./layouts/main.kdl;
   # home.file.".config/zellij/config.kdl".source = ./config.kdl;
 
 }
