@@ -1,19 +1,19 @@
 { pkgs, ... }:
 
 let
-  update-sys = pkgs.writeShellScriptBin "update-sys" ''
+  nrb = pkgs.writeShellScriptBin "nrb" ''
   pushd ~/.dotfiles 
   sudo nixos-rebuild switch --flake .#laptop
   '';
-  sys-gc = pkgs.writeShellScriptBin "sys-gc" ''
-  nix-collect-garbage -d
+  ndg = pkgs.writeShellScriptBin "ndg" ''
+  sudo nix-collect-garbage -d
   sleep 2
-  update-sys
+  nrb
   '';
 in
 {
   home.packages = with pkgs; [
-    update-sys
-    sys-gc
+    nrb
+    ndg
   ];
 }
