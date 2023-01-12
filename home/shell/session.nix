@@ -1,11 +1,12 @@
-{ pkgs, config, ... };
-
+{ pkgs, config, ... }:
+{
 home = {
 	sessionVariables = {
 	  
-	  EDITOR = "hx";
+	    EDITOR = "hx";
       BROWSER = "librewolf";
       TERMINAL = "kitty";
+			NIXOS_OZONE_WL = "1";
       QT_SCALE_FACTOR = "1";
       MOZ_ENABLE_WAYLAND = "1";
       SDL_VIDEODRIVER = "wayland";
@@ -19,4 +20,5 @@ home = {
       XDG_BIN_HOME = "\${HOME}/.local/bin";
       XDG_DATA_HOME = "\${HOME}/.local/share";
 	};
-};
+ };
+}
