@@ -15,11 +15,11 @@
     };
 
     aliases = {
-      pu = "push";
-      ci = "commit";
+      # pu = "push";
+      # cm = "commit -m";
       st = "status";
-      a  = "add";
-      l  = "log";
+      # a  = "add";
+      # l  = "log";
       h  = "history";
       
      };
