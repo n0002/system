@@ -22,7 +22,7 @@
         #tabs
         tab_bar_style = "powerline";
         tab_bar_align = "left";
-        tab_bar_min_tabs = "1";       
+        tab_bar_min_tabs = "2";       
         confirm_os_window_close = 0;
         
         inactive_border_color = "#000000";
