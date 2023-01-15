@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 
 let 
-  colors = import ../../../charm.nix; 
+  colors = import ../../themes/charm.nix; 
 in
 {
  programs.helix = {
@@ -19,6 +19,7 @@ in
         keys.normal = {
           S = ":w"; # save file
           Q = ":q"; # quit helix
+          g.x = ":buffer-close";
       };
 
         keys.insert = {
