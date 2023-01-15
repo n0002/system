@@ -100,6 +100,7 @@
     wget
     psmisc
     exfat
+    fzf
     discord-canary
     brave
     ffmpeg
@@ -114,7 +115,6 @@
     wayland-utils
     wayland-protocols
     xwayland
-    wofi
     qt6.qtwayland
     glfw-wayland
     wdisplays

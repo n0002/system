@@ -46,7 +46,6 @@
  gnupg
  pinentry
  tmux
- rofi
  nerdfonts
  ranger
  spotify
