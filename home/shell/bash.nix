@@ -33,8 +33,8 @@
      
         
     v = "hx";
-    vim = "hx";
-    nvim = "hx";
+    # vim = "hx";
+    # nvim = "hx";
     
     zs = "zellij -s";
     za = "zellij attach";
