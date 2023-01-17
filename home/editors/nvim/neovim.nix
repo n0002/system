@@ -40,17 +40,5 @@ plugins = with pkgs.vimPlugins; [
    ];
  };
  
- home.packages = with pkgs; [
-    rnix-lsp
-    sumneko-lua-language-server
-
-    gopls
-    pyright
-    rust-analyzer
-    stylua
-    nixpkgs-fmt
-    rustfmt
-    lldb
- ];
 
 }
