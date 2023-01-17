@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "fw"; # Define your hostname.
+  networking.hostName = "undream"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -35,7 +35,11 @@
   services.fwupd.enable = true;
 
   #Bluetooth 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    package = pkgs.bluezFull;
+  };
+
   #services.blueman.enable = true;
 
   
@@ -86,8 +90,8 @@
     isNormalUser = true;
     description = "n";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [
+    # ];
   };
 
   # Allow unfree packages
@@ -118,6 +122,7 @@
     qt6.qtwayland
     glfw-wayland
     wdisplays
+    bluez-tools
     brightnessctl
 
   ];

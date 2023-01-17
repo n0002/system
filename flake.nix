@@ -7,12 +7,12 @@
 	nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
-		  url = github:nix-community/home-manager;
+		  url = "github:nix-community/home-manager";
 		  inputs.nixpkgs.follows = "nixpkgs";
 				};
 		
     hyprland = {
-      url = github:hyprwm/Hyprland;
+      url = "github:hyprwm/Hyprland";
       };
 
     webcord.url = "github:fufexan/webcord-flake";
