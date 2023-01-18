@@ -1,7 +1,7 @@
 {pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ git git-crypt ];
+  home.packages = with pkgs; [ gh git git-crypt ];
   
   programs = {
     git = {
