@@ -14,33 +14,9 @@ layout {
  }
     tab name="code" split_direction="Vertical" focus=true {
         pane split_direction="Vertical" {
-            pane name="hx" size="50%"
-            pane name="sh" size="50%"
+            pane name="" size="50%"
+            pane name="" size="50%"
                     }
     }
-    tab name="server" split_direction="Vertical" {
-        pane split_direction="Vertical" {
-            pane size="50%"
-       }
-    }
-    tab name="tmp" split_direction="Vertical" {
-        pane split_direction="Vertical" {
-            // pane size="50%"
-            pane size="50%" split_direction="Horizontal" {
-                pane size="50%"
-                pane size="50%"
-            }
-        }
-    }
-    // tab split_direction="Vertical" {
-    //     pane split_direction="Vertical" {
-    //         pane size="20%" {
-    //             plugin location="zellij:strider"
-    //         }
-    //         pane size="80%" split_direction="Horizontal" {
-    //             pane size="50%"
-    //             pane size="50%"
-    //         }
-    //     }
-    // }
+    
 }
