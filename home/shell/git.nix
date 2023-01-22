@@ -12,6 +12,7 @@
 
     extraConfig = {
     init = {defaultBranch = "main";};
+    core.editor = "nvim";
     };
 
     aliases = {
