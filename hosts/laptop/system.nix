@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+    
     ];
 
   # Bootloader.
@@ -44,6 +45,7 @@
 
   
   services.auto-cpufreq.enable = true;
+  services.thermald.enable = true;
 
 # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -52,7 +54,9 @@
   services.xserver.displayManager.gdm.wayland.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   programs.sway.enable = true;
-  services.xserver.windowManager.qtile.enable = true;
+  services.xserver.windowManager.qtile = {
+    enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -109,8 +113,9 @@
     brave
     ffmpeg
     ntfs3g
-    python310
-    python310Packages.pip
+    qtile
+    # python310
+    # python310Packages.pip
     blueberry
     swaybg
     mako
