@@ -37,8 +37,10 @@
 
   #Bluetooth 
   hardware.bluetooth = {
-    enable = true;
+    # enable = true;
     package = pkgs.bluezFull;
+    # bluetooth not turned on by default
+    powerOnBoot = false;
   };
 
   #services.blueman.enable = true;
@@ -48,17 +50,17 @@
   services.thermald.enable = true;
 
 # Enable the X11 windowing system.
-  services.xserver.enable = true;
+services.xserver.enable = true;
 
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.gdm.wayland.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-  programs.sway.enable = true;
-  services.xserver.windowManager.qtile = {
-    enable = true;
-  };
+# Enable the XFCE Desktop Environment.
+services.xserver.displayManager.lightdm.enable = true;
+services.xserver.desktopManager.xfce.enable = true;
+programs.sway.enable = true;
+services.xserver.windowManager.qtile = {
+# enable = true;
+};
 
-  # Configure keymap in X11
+# Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
@@ -113,14 +115,16 @@
     brave
     ffmpeg
     ntfs3g
-    qtile
     # python310
     # python310Packages.pip
     blueberry
     swaybg
     mako
+    autotiling
     wayland
     wayland-scanner
+    wl-clipboard
+    wlr-randr
     wayland-utils
     wayland-protocols
     xwayland
