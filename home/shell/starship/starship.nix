@@ -17,8 +17,8 @@
          #];
           #scan_timeout = 10;
           character = {
-          success_symbol = "[➜](#ffccff)";
-          error_symbol = "[➜](bold red)";
+          success_symbol = "[›](#ffccff)";
+          error_symbol = "[›](bold red)";
 
     };
    };
