@@ -11,7 +11,7 @@ let
   nrb
   '';
   ultrawide = pkgs.writeShellScriptBin "ultrawide" ''
-  wlr-randr --output eDP-1 --off
+  wlr-randr --output eDP-1 --off 
   '';
 in
 {
