@@ -12,18 +12,9 @@
 
     extraConfig = {
     init = {defaultBranch = "main";};
-    core.editor = "nvim";
+    core.editor = "hx";
     };
 
-    aliases = {
-      # pu = "push";
-      # cm = "commit -m";
-      st = "status";
-      # a  = "add";
-      # l  = "log";
-      h  = "history";
-      
-     };
-   };
+     
  };
 }
