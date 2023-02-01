@@ -2,20 +2,19 @@
   description = "NixOS config";
 
   inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+	nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-	nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    home-manager = {
+  home-manager = {
 		  url = "github:nix-community/home-manager";
 		  inputs.nixpkgs.follows = "nixpkgs";
 				};
 		
-    hyprland = {
+  hyprland = {
       url = "github:hyprwm/Hyprland";
       };
 
-    webcord.url = "github:fufexan/webcord-flake";
+  webcord.url = "github:fufexan/webcord-flake";
 		};
 
   outputs = inputs @ { webcord, self, nixpkgs, home-manager, nixos-hardware, hyprland }: 
