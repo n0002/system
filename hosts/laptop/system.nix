@@ -46,8 +46,9 @@
   #services.blueman.enable = true;
 
   
-  services.auto-cpufreq.enable = true;
+  # services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
+  services.tlp.enable = true;
 
 # Enable the X11 windowing system.
 services.xserver.enable = true;
@@ -78,6 +79,7 @@ services.xserver.windowManager.qtile = {
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -111,10 +113,15 @@ services.xserver.windowManager.qtile = {
     psmisc
     exfat
     fzf
+    wire
     discord-canary
     brave
     ffmpeg
     ntfs3g
+    xdg-desktop-portal-wlr
+    grim
+    sway-contrib.grimshot
+    slurp
     # python310
     # python310Packages.pip
     blueberry
