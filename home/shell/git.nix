@@ -15,6 +15,8 @@
     core.editor = "hx";
     };
 
+    ignores = ["*~" "*result*" ".direnv"];
      
- };
+   };
+  };
 }
