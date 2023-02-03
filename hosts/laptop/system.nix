@@ -45,7 +45,6 @@
 
   #services.blueman.enable = true;
 
-  
   # services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
   services.tlp.enable = true;
@@ -181,8 +180,13 @@ services.xserver.windowManager.qtile = {
   system.stateVersion = "22.05"; # Did you read the comment?
 
   nix = {
-		package = pkgs.nixFlakes;
-		extraOptions = "experimental-features = nix-command flakes";
-		  };
+     settings = {
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
 
-}
+      # for direnv GC roots
+      keep-derivations = true;
+      keep-outputs = true;
+        };
+        };
+		}
