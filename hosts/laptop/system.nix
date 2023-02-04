@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -47,7 +47,16 @@
 
   # services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
-  services.tlp.enable = true;
+  
+  services.tlp = { 
+  enable = true;
+  settings = {
+    PCIE_ASPM_ON_BAT = "powersupersave";
+    RUNTIME_PM_ON_AC= "on";
+    CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
+  };
+};
 
 # Enable the X11 windowing system.
 services.xserver.enable = true;
@@ -69,25 +78,31 @@ services.xserver.windowManager.qtile = {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  
+  hardware.pulseaudio.enable = lib.mkForce false;
   # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+   sound.enable = true;
+  # hardware.pulseaudio.enable = true;
+
   security.rtkit.enable = true;
+  
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
+  
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
 
   security.polkit.enable = true;
+
+  xdg.portal.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -96,7 +111,7 @@ services.xserver.windowManager.qtile = {
   users.users.n = {
     isNormalUser = true;
     description = "n";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     # packages = with pkgs; [
     # ];
   };
@@ -112,7 +127,6 @@ services.xserver.windowManager.qtile = {
     psmisc
     exfat
     fzf
-    wire
     discord-canary
     brave
     ffmpeg
@@ -140,6 +154,11 @@ services.xserver.windowManager.qtile = {
     bluez-tools
     brightnessctl
 
+    # audio packages
+    pavucontrol
+    wireplumber
+    alsa-utils
+    alsa-lib
   ];
 
 

@@ -19,7 +19,7 @@
     home-manager.enable = true;
   };
 
-  home.stateVersion = "22.05";
+  home.stateVersion = "23.05";
 
  services.picom = { 
         enable = true;
@@ -38,7 +38,6 @@
  nitrogen
  sxiv 
  betterdiscordctl
- pavucontrol
  keepassxc
  openssl
  dmenu
