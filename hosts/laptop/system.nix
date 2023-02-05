@@ -48,13 +48,15 @@
   # services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
   
+  # services.auto-cpufreq.enable = true;
+  
   services.tlp = { 
   enable = true;
   settings = {
     PCIE_ASPM_ON_BAT = "powersupersave";
     RUNTIME_PM_ON_AC= "on";
-    CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
+    CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
   };
 };
 
@@ -81,7 +83,7 @@ services.xserver.windowManager.qtile = {
   
   hardware.pulseaudio.enable = lib.mkForce false;
   # Enable sound with pipewire.
-   sound.enable = true;
+   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
   security.rtkit.enable = true;
@@ -91,7 +93,6 @@ services.xserver.windowManager.qtile = {
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    wireplumber.enable = true;
     jack.enable = true;
 
   
@@ -143,6 +144,7 @@ services.xserver.windowManager.qtile = {
     autotiling
     wayland
     wayland-scanner
+    swayidle
     wl-clipboard
     wlr-randr
     wayland-utils
