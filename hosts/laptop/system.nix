@@ -45,13 +45,13 @@
 
   #services.blueman.enable = true;
 
-  # services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
   
   # services.auto-cpufreq.enable = true;
   
   services.tlp = { 
-  enable = true;
+  enable = lib.mkForce false;
   settings = {
     PCIE_ASPM_ON_BAT = "powersupersave";
     RUNTIME_PM_ON_AC= "on";
@@ -103,7 +103,8 @@ services.xserver.windowManager.qtile = {
 
   security.polkit.enable = true;
 
-  xdg.portal.enable = true;
+
+  xdg.portal.wlr.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -132,7 +133,6 @@ services.xserver.windowManager.qtile = {
     brave
     ffmpeg
     ntfs3g
-    xdg-desktop-portal-wlr
     grim
     sway-contrib.grimshot
     slurp
