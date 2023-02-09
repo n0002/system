@@ -30,8 +30,11 @@
      nb = "nix-build";
      nd = "nix-develop";
      nsp = "nix-shell -p";
-     
-        
+
+     de = "hx ./shell.nix";    
+     dn = "echo 'use nix' >> .envrc && direnv allow";     
+     df = "echo 'use flake' >> .envrc && direnv allow";     
+       
     v = "hx";
     # vim = "hx";
     # nvim = "hx";
@@ -44,6 +47,7 @@
     zls = "zellij list-sessions";
 
     g = "git";
+    gi = "gh repo create";
     ga = "git add";
     gb = "git branch";
     gbc = "${gb} --show-current";
@@ -52,7 +56,15 @@
     gcm = "${gc} -m";
       
     gco = "git checkout";
+
+    
+    gre = "git remote";
+    gres = "${gre} show";
+    grea = "${gre} add";
+
+    gcl = "gh repo clone";
       
+    
     gd = "git diff";
     gd- = "git diff HEAD~";
     gdh = "git diff HEAD";
@@ -62,7 +74,9 @@
     glog = "git log";
     
     gp = "git push";
+    gpl = "git pull";
     gs = "git status";
+    
 
     sb = "source ~/.bashrc";
         
@@ -71,6 +85,7 @@
       bashrcExtra = ''
         export PATH="$HOME/.local/bin:$PATH";
         export PATH="$HOME/.dots/scripts:$PATH";
+        eval "$(direnv hook bash)"
         '';
    };
   };
