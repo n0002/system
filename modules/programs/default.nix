@@ -7,5 +7,5 @@
  ./gallery
  ./tmux
  ./zellij
- ./rofi.nix
+ ./rofi
 ]
