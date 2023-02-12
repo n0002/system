@@ -1,5 +1,6 @@
 [
  ./mpv
+ ./rofi
  ./neofetch
  ./fcitx
  ./discord
