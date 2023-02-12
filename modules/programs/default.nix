@@ -1,10 +1,10 @@
 [
- ./mpv/mpv.nix
- ./neofetch/neofetch.nix
- ./fcitx/fcitx.nix
- ./webcord.nix
- ./gallery.nix
- ./tmux.nix
- ./zellij/zellij.nix
+ ./mpv
+ ./neofetch
+ ./fcitx
+ ./discord
+ ./gallery
+ ./tmux
+ ./zellij
  ./rofi.nix
 ]
