@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./hardware.nix
     
     ];
 
@@ -16,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "undream"; # Define your hostname.
+  networking.hostName = "katsuragi"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -113,7 +113,8 @@ services.xserver.windowManager.qtile = {
   users.users.n = {
     isNormalUser = true;
     description = "n";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "libvirtd" "networkmanager" "wheel" "audio" ];
+    
     # packages = with pkgs; [
     # ];
   };
@@ -121,6 +122,8 @@ services.xserver.windowManager.qtile = {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.libvirtd.enable = true;
+  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -148,6 +151,7 @@ services.xserver.windowManager.qtile = {
     wl-clipboard
     wlr-randr
     wayland-utils
+    virt-manager
     wayland-protocols
     xwayland
     qt6.qtwayland
@@ -172,6 +176,14 @@ services.xserver.windowManager.qtile = {
       });
     })
   ];
+  
+  
+    security.pam.loginLimits = [{
+    domain = "*";
+    type = "soft";
+    item = "nofile";
+    value = "262144";
+  }];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
