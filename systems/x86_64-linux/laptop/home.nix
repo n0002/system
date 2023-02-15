@@ -2,13 +2,13 @@
 
 {
   imports =
-     (import ../../modules/programs/default.nix) ++
-     (import ../../modules/terminals/default.nix) ++
-     (import ../../modules/browsers/default.nix) ++
-     (import ../../modules/scripts/default.nix) ++
-     (import ../../modules/editors/default.nix) ++
-     (import ../../modules/desktop/default.nix) ++
-     (import ../../modules/shell);
+     (import ../../../modules/programs/default.nix) ++
+     (import ../../../modules/terminals/default.nix) ++
+     (import ../../../modules/browsers/default.nix) ++
+     (import ../../../modules/scripts/default.nix) ++
+     (import ../../../modules/editors/default.nix) ++
+     (import ../../../modules/desktop/default.nix) ++
+     (import ../../../modules/shell);
 
   home = {
     username = "n";

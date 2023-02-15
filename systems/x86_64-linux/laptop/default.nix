@@ -20,7 +20,7 @@ in
     specialArgs = { inherit user; };
     modules = [
 
-      ./laptop/system.nix
+      ./system.nix
       
       nixos-hardware.nixosModules.framework-12th-gen-intel
 
@@ -33,7 +33,7 @@ in
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = { inherit user inputs; };
         home-manager.users.${user} = {
-          imports = [ (import ./laptop/home.nix) ];
+          imports = [ (import ./home.nix) ];
           };
         }
     ];

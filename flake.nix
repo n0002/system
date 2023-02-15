@@ -26,7 +26,7 @@
     {
       nixosConfigurations = (
         # NixOS configurations
-        import ./systems/laptop {
+        import ./systems/x86_64-linux/laptop {
           # Imports ./hosts/default.nix
           inherit (nixpkgs) lib;
           inherit inputs nixpkgs nixos-hardware home-manager user hyprland webcord ; # Also inherit home-manager so it does not need to be defined here.
