@@ -1,4 +1,4 @@
 [
   ./lock.nix
-  ./system.nix
+  ./update.nix
 ]
