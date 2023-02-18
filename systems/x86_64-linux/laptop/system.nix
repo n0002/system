@@ -63,13 +63,17 @@
 # Enable the X11 windowing system.
 services.xserver.enable = true;
 
-# Enable the XFCE Desktop Environment.
-services.xserver.displayManager.lightdm.enable = true;
+services.xserver.displayManager.gdm.wayland = true;
+services.xserver.displayManager.gdm.enable= true;
+
+services.xserver.displayManager.defaultSession = "hyprland";
+services.xserver.libinput.enable = true;
+
 services.xserver.desktopManager.xfce.enable = true;
 programs.sway.enable = true;
-services.xserver.windowManager.qtile = {
+# services.xserver.windowManager.qtile = {
 # enable = true;
-};
+# };
 
 # Configure keymap in X11
   services.xserver = {
