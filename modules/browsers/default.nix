@@ -1,5 +1,5 @@
 [
- ./librewolf.nix
- ./firefox.nix
- ./qutebrowser/qutebrowser.nix
+ ./librewolf/default.nix
+ ./firefox/default.nix
+ ./qutebrowser/default.nix
 ]
