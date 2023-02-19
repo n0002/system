@@ -1,16 +1,25 @@
+{ options, config, lib, pkgs, ... }:
 
-{ pkgs, ... }:
-
+with lib;
+let cfg = config.n.programs.mpv;
+in
 {
-  programs = {
-    mpv = {
-      enable = true;
-
-      scripts = with pkgs.mpvScripts; [
-      thumbnail
-      ];
-    };
+  options.n.programs.mpv = with types; {
+    enable = mkBoolOpt true "Whether or not to enable mpv.";
   };
-  
-  home.file.".config/mpv/mpv.conf".source = ./mpv.conf;
+
+  config =
+    mkIf cfg.enable { 
+      n.home.extraOptions = {
+        programs.mpv = {
+          enable = true;
+
+          scripts = with pkgs.mpvScripts; [
+            thumbnail
+            youtube-quality
+            mpv-playlistmanager
+            
+          ];
+        };
+      };
 }
