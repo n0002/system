@@ -1,12 +1,14 @@
-{pkgs, ... }:
+{ options, config, lib, pkgs, ... }:
 
+with lib;
+let cfg = config.n.browsers.librewolf;
+in
 {
-  programs = {
-    librewolf = {
-      enable = true;
+  options.n.browsers.librewolf = with types; {
+    enable = mkBoolOpt true "Whether or not to enable librewolf.";
+  };
 
-     # settings = {
-     #   };
-   };
- };
-}
+  config = mkIf cfg.enable { 
+    environment.systemPackages = with pkgs; [ librewolf ];
+     };
+   } 
