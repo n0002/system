@@ -1,4 +1,0 @@
-[
-    ./waybar/waybar.nix
-
-]

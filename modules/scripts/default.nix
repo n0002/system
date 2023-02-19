@@ -1,4 +1,0 @@
-[
-  ./lock.nix
-  ./update.nix
-]
