@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ options, config, lib, pkgs, ... }:
 
 let
   nrb = pkgs.writeShellScriptBin "nrb" ''
@@ -15,6 +15,7 @@ let
   '';
 in
 {
+
   home.packages = with pkgs; [
     nrb
     ndg

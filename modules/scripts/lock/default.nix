@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{options, config, lib,  pkgs, ... }:
 
 let
   lock = pkgs.writeShellScriptBin "lock" ''
@@ -6,7 +6,7 @@ let
   '';
 in
 {
-  home.packages = with pkgs; [
-    lock
-  ];
+  home.packages = [ 
+  lock
+   ];
 }
