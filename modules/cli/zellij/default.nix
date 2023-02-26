@@ -1,10 +1,10 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.n.programs.zellij;
+let cfg = config.n.cli.zellij;
 in
 {
-  options.n.programs.zellij = with types; {
+  options.n.cli.zellij = with types; {
     enable = mkBoolOpt true "Whether or not to enable zellij.";
   };
 
@@ -18,4 +18,6 @@ in
   home.file.".config/zellij/layouts/main.kdl".source = ./layouts/main.kdl;
   # home.file.".config/zellij/config.kdl".source = ./config.kdl;
 
+    };
+  };
 }

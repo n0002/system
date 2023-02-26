@@ -1,10 +1,10 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.n.programs.tmux;
+let cfg = config.n.cli.tmux;
 in
 {
-  options.n.programs.tmux = with types; {
+  options.n.cli.tmux = with types; {
     enable = mkBoolOpt true "Whether or not to enable tmux.";
   };
 
@@ -14,4 +14,5 @@ in
         enable = true;
       };
     };
+};
 }
