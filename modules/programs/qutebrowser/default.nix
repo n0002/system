@@ -1,10 +1,10 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.n.browsers.qutebrowser;
+let cfg = config.n.programs.qutebrowser;
 in
 {
-  options.n.browsers.qutebrowser = with types; {
+  options.n.programs.qutebrowser = with types; {
     enable = mkBoolOpt true "Whether or not to enable qutebrowser.";
   };
 

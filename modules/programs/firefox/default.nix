@@ -1,10 +1,10 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.n.browsers.firefox;
+let cfg = config.n.programs.firefox;
 in
 {
-  options.n.browsers.firefox = with types; {
+  options.n.programs.firefox = with types; {
     enable = mkBoolOpt true "Whether or not to enable firefox.";
   };
 

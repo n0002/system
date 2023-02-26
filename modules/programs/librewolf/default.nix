@@ -1,10 +1,10 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.n.browsers.librewolf;
+let cfg = config.n.programs.librewolf;
 in
 {
-  options.n.browsers.librewolf = with types; {
+  options.n.programs.librewolf = with types; {
     enable = mkBoolOpt true "Whether or not to enable librewolf.";
   };
 
