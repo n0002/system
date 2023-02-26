@@ -1,10 +1,10 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.n.editors.nvim;
+let cfg = config.n.cli.nvim;
 in
 {
-  options.n.editors.nvim = with types; {
+  options.n.cli.nvim = with types; {
     enable = mkBoolOpt true "Whether or not to enable nvim.";
   };
 

@@ -1,10 +1,10 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.n.editors.helix;
+let cfg = config.n.cli.helix;
 in
 {
-  options.n.editors.helix = with types; {
+  options.n.cli.helix = with types; {
     enable = mkBoolOpt true "Whether or not to enable helix.";
   };
 
@@ -14,7 +14,7 @@ in
         enable = true;
         
         settings = {
-        theme = "berry";
+        theme = "mocha";
 
         editor = {
           line-number = "relative";
@@ -47,5 +47,7 @@ in
     rustfmt
     lldb
   ];
+    };
+  };
 }
 
