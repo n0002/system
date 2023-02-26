@@ -9,7 +9,11 @@ in
   };
 
   config = mkIf cfg.enable { 
+  
     n.home.extraOptions = {
+
+    home.packages = with pkgs; [ gh ];
+    
     programs = {
       git = {
         enable = true; 
