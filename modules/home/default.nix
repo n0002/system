@@ -23,7 +23,7 @@ in
     home-manager = {
       useUserPackages = true;
 
-      users.${config.n.user.name} =
+      users.n =
         mkAliasDefinitions options.n.home.extraOptions;
     };
   };

@@ -5,7 +5,7 @@ let cfg = config.n.terminals.wezterm;
 in
 {
   options.n.terminals.wezterm = with types; {
-    enable = mkBoolOpt true "Whether or not to enable wezterm.";
+    enable = mkBoolOpt false "Whether or not to enable wezterm.";
   };
 
   config = mkIf cfg.enable {

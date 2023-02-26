@@ -9,9 +9,6 @@ in
   };
 
   config = mkIf cfg.enable { 
-      n.home.extraOptions = {
-        programs.neofetch = {
-          enable = true;
-      };
-    home.file.".config/neofetch/config.conf".source = ./config.conf;  
+    environment.systemPackages = with pkgs; [neofetch];  
+};
 }

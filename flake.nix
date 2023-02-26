@@ -4,8 +4,8 @@
   inputs = {
 
 	
-  nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-  unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+  nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  # unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   
   nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -20,8 +20,8 @@
   };
 
 	snowfall-flake = {
-    url = "snowfallorg/flake";
-    inputs.nixpkgs.follows = "unstable";
+    url = "github:snowfallorg/flake";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
   	
   hyprland = {
@@ -32,20 +32,20 @@
 		};
 
     outputs = inputs:
-      inputs.snowfall.lib.mkFlake {
+      inputs.snowfall-lib.mkFlake {
         inherit inputs;
 
         src =  ./.;
 
         overlays = with inputs; [
-          
+            snowfall-flake.overlay          
         ];
 
         channels-config.allowUnfree = true;
 
         systems.modules = with inputs; [
           
-          nixos.hardwareos.nixosModules.framework
+          nixos-hardware.nixosModules.framework
           
           home-manager.nixosModules.home-manager
 

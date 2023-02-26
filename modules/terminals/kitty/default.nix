@@ -25,7 +25,7 @@ in
 
             copy_on_select = "clipboard";
 
-            background_opacity = "0.8";
+            background_opacity = "0.9";
 
             #tabs
             tab_bar_style = "powerline";

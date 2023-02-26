@@ -14,5 +14,7 @@ in
       n.home.extraOptions = {
         programs.gallery-dl = {
           enable = true;
+      };
+    };
   };
 }

@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "dev"; # Define your hostname.
+  networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -143,6 +143,25 @@ programs.sway.enable = true;
     ntfs3g
     grim
     sway-contrib.grimshot
+    nitrogen
+     sxiv 
+     betterdiscordctl
+     keepassxc
+     openssl
+     dmenu
+     gnumake
+     gnupg
+     pinentry
+     tmux
+     noto-fonts
+     noto-fonts-emoji
+     nerdfonts
+     ranger
+     spotify
+     anki-bin
+     lxappearance
+     gotop
+     ytfzf
     slurp
     # python310
     # python310Packages.pip
@@ -215,7 +234,7 @@ programs.sway.enable = true;
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "22.11"; # Did you read the comment?
 
   nix = {
      settings = {

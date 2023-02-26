@@ -1,6 +1,16 @@
-{config, pkgs, lib, ... }:
+{options, config, pkgs, lib, ... }:
 
+with lib;
+let
+  cfg = config.n.desktop.waybar;
+in
 {
+ options.n.desktop.waybar = with types; {
+    enable = mkBoolOpt true "Whether or not to enable waybar.";
+  };
+
+  config = mkIf cfg.enable {
+  n.home.extraOptions = {
   programs.waybar = {
       enable = true;
       style = ''
@@ -40,4 +50,6 @@
 
       }];
     };
+    };
+  };
 }

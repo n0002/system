@@ -1,5 +1,6 @@
 { options, config, lib, pkgs, ... }:
 
+with lib;
 let
   nrb = pkgs.writeShellScriptBin "nrb" ''
   pushd ~/.dotfiles 
@@ -13,12 +14,18 @@ let
   ultrawide = pkgs.writeShellScriptBin "ultrawide" ''
   wlr-randr --output eDP-1 --off 
   '';
+cfg = config.n.scripts.update;
 in
 {
+  options.n.scripts.update = with types; {
+    enable = mkBoolOpt true "Whether or not to enable update scripts.";
+  };
 
-  home.packages = with pkgs; [
-    nrb
-    ndg
-    ultrawide
+  config = mkIf cfg.enable {
+    environment.systemPackages = [
+      nrb
+      ndg
+      ultrawide
   ];
+  };
 }

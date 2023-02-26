@@ -5,8 +5,7 @@ let
   cfg = config.n.desktop.imv;
 in
 {
-  
- options.n.cli.imv = with types; {
+   options.n.desktop.imv = with types; {
     enable = mkBoolOpt true "Whether or not to enable imv.";
   };
  config = mkIf cfg.enable {

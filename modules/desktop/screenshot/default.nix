@@ -15,4 +15,6 @@ in
 
         home.packages = with pkgs; [ sway-contrib.grimshot grim ];
     
-}
+      };
+    };
+  }

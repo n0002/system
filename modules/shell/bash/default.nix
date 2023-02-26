@@ -96,7 +96,8 @@ in
            export PATH="$HOME/.dots/scripts:$PATH";
            eval "$(direnv hook bash)"
            '';
+      };
+     };
     };
-   };
   };
 }

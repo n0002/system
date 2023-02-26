@@ -9,6 +9,8 @@ in
     enable = mkBoolOpt true "Whether or not to enable flake.";
   };
  config = mkIf cfg.enable {
-  environment.systemPackages = with pkgs; [ snowfallorg.flake];
+  environment.systemPackages = with pkgs; [ 
+    snowfallorg.flake
+    ];
   };
 }

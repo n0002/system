@@ -5,7 +5,7 @@ let cfg = config.n.shell.nix;
 in
 {
   options.n.shell.nix = with types; {
-    enable = mkBoolOpt false "Whether or not to enable direnv.";
+    enable = mkBoolOpt true "Whether or not to enable direnv.";
   };
 
   config = mkIf cfg.enable {
