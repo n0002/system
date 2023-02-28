@@ -94,7 +94,7 @@ in
          bashrcExtra = ''
            export PATH="$HOME/.local/bin:$PATH";
            export PATH="$HOME/.dots/scripts:$PATH";
-           eval "$(direnv hook bash)"
+           # eval "$(direnv hook bash)"
            '';
       };
      };
