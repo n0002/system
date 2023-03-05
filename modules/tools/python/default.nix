@@ -12,7 +12,7 @@ in
 
   config = mkIf cfg.enable {
     n.home.extraOptions = {
-      home.packages = with pkgs; [ python311 nodePackages.pyright python311Packages.python-lsp-server];
+      home.packages = with pkgs; [ python311 nodePackages.pyright ruff python311Packages.python-lsp-server];
       
        }; 
     
