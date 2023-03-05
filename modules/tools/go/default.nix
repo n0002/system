@@ -12,6 +12,10 @@ in
   config = mkIf cfg.enable {
     n.home.extraOptions = {
       home.packages = with pkgs; [ go gopls];
-    };
-  };
+      
+       home.sessionVariables = {
+          GOPATH = "$HOME/code/go";   
+         };
+       };  
+     };
 } 
