@@ -53,21 +53,4 @@
         ]; 
       };
 
-  # outputs = inputs @ { webcord, self, nixpkgs, home-manager, nixos-hardware, hyprland }: 
-  #   let
-  #     # Variables that can be used in the config files.
-  #     user = "n";
-  #   in
-  #   # Use above variables in ...
-  #   {
-  #     nixosConfigurations = (
-  #       # NixOS configurations
-  #       import ./systems/x86_64-linux/laptop {
-  #         # Imports ./hosts/default.nix
-  #         inherit (nixpkgs) lib;
-  #         inherit inputs nixpkgs nixos-hardware home-manager user hyprland webcord ; # Also inherit home-manager so it does not need to be defined here.
-  #       }
-  #     );
-  #   };
-
-}
+  }
