@@ -19,26 +19,24 @@ in
                 font-size: 16pt;
                 font-weight: bold;
                 border-radius: 0px;
-                background-color: rgb(0, 0, 0); 
+                background-color: rgba(12, 12, 12, 0.0);
                 color: rgb(255, 255, 255);
               }
 
             window#waybar {
                  background-color: transparent;
+                 background: rgba(12, 12, 12, 0.0);
                }
                window > box {
                  margin-left: 5px;
                  margin-right: 5px;
                  margin-top: 2px;
-                 background-color: rgb(0, 0, 0);
                }
             
             #workspaces {
-                background-color: rgb(0, 0, 0); 
-                color: rgb(255, 255, 255);
-                padding-left: 0px;
-                padding-right: 4px;
-                }
+                 padding-left: 0px;
+                 padding-right: 4px;
+               }
             #memory, #battery, #clock, #window {
               padding-left: 15px;
               padding-right: 15px;
@@ -53,7 +51,7 @@ in
            "wlr/workspaces" 
                  ];
         modules-center = [
-            # "hyprland/window"
+            "hyprland/window"
         ];
 
         modules-right = [
@@ -65,18 +63,34 @@ in
         "wlr/workspaces" = {
           "format" = "{icon}";
           "on-click" = "activate";
-        };
+         };
         "hyprland/window" = {
           "format" = "{}";
           "seperate-outputs" = "true";
+          "max-length" = "20";
           
         };
         "battery" = {
+          "interval" = 10;
+          "states" = {
+            "warning" = 20;
+            "critical" = 10;
+          };
+          "format" = "{icon} {capacity}%";
+          "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
+          "format-full" = "{icon} {capacity}%";
+          "format-charging" = " {capacity}%";
           };
         "memory" = {
+          "interval" = 1;
+          "format" = "﬙ {percentage}%";
+          "states" = {
+            "warning" = 70;
+            };
           };
         "clock" = {
-          "format" = "{:%H:%M}";          
+          "interval" = 1;
+          "format" = "{:%I:%M %p  %A %b %d}";
         };
       }];
     };
